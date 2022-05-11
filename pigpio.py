@@ -10,7 +10,7 @@ GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 3 to be an input pi
 
 
 
-GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback(3) # Setup event on pin 10 rising edge
+GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback(3)) # Setup event on pin 10 rising edge
 
 
 
