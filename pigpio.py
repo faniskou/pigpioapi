@@ -9,7 +9,7 @@ GPIO.setup(13, GPIO.OUT)
 GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 3 to be an input pin and set initial value to be pulled low (off)
 
 def button_callback(channel):
-    print("Button was pushed!" + channel)
+    print("Button was pushed!" + str(channel))
 
 GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
 
