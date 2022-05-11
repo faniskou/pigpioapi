@@ -8,14 +8,14 @@ GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 GPIO.setup(13, GPIO.OUT) 
 GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 3 to be an input pin and set initial value to be pulled low (off)
 
-
+def button_callback(gp):
+    print("Button was pushed!" + gp)
 
 GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback(3)) # Setup event on pin 10 rising edge
 
 
 
-def button_callback(gp):
-    print("Button was pushed!" + gp)
+
 
 @app.route('/on')
 def turn_led_on():
