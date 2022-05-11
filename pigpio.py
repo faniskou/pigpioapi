@@ -3,11 +3,14 @@ from flask import Flask
 app = Flask(__name__)
 
 # TODO
-# list of in
-# table of out , outhttpcalls
+# list of in [1,2,3]
+# list of out , [1,2,3]
+# list of outhttpcalls [https://1,https://2,https://3]
 # add out http call
 # add in status 
 # check in is in the list and loop outs 
+#[1,2,3].index(2) # => 1
+#[1,2,3].index(4) # => ValueError
 
 
 GPIO.setwarnings(False) # Ignore warning for now
