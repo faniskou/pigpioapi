@@ -2,6 +2,13 @@ import RPi.GPIO as GPIO
 from flask import Flask
 app = Flask(__name__)
 
+# TODO
+# list of in
+# table of out , outhttpcalls
+# add out http call
+# add in status 
+# check in is in the list and loop outs 
+
 
 GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
@@ -26,6 +33,7 @@ def turn_led_on():
 def turn_led_off():
     GPIO.output(13, GPIO.LOW)
     return "OK"
+
 
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=5001)
