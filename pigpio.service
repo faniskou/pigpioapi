@@ -1,11 +1,11 @@
 [Unit]
-Description=DHT
+Description=pigpiopi
 After=multi-user.target
 
 [Service]
 User=happycave
 Type=simple
-ExecStart=/usr/bin/python3 /home/happycave/DHTSimpleApi/dht.py
+ExecStart=/usr/bin/python3 /home/happycave/pigpiopi/pigpiopi.py
 Restart=always
 RestartSec=30
 
