@@ -5,10 +5,10 @@ from flask import Flask
 app = Flask(__name__)
 
 # TODO
-# list of in [1,2,3]
-# list of out , [1,2,3]
-# list of outhttpcalls [https://1,https://2,https://3]
-# add out http call
+
+list_in = [7,11,13,15]
+list_out = [3]
+list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 # add in status 
 # check in is in the list and loop outs 
 #[1,2,3].index(2) # => 1
@@ -31,16 +31,14 @@ GPIO.add_event_detect(3,GPIO.FALLING,callback=button_callback, bouncetime=200) #
 
 
 
-
-
-@app.route('/on')
+@app.route('/<gpionum>/on')
 def turn_led_on():
-    GPIO.output(13, GPIO.HIGH)
+    GPIO.output(gpionum, GPIO.HIGH)
     return "OK"
 
-@app.route('/off')
+@app.route('/<gpionum>/off')
 def turn_led_off():
-    GPIO.output(13, GPIO.LOW)
+    GPIO.output(gpionum, GPIO.LOW)
     return "OK"
 
 
