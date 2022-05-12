@@ -1,11 +1,11 @@
 [Unit]
-Description=pigpiopi
+Description=pigpio
 After=multi-user.target
 
 [Service]
 User=happycave
 Type=simple
-ExecStart=/usr/bin/python3 /home/happycave/pigpiopi/pigpiopi.py
+ExecStart=/usr/bin/python3 /home/happycave/pigpiopi/pigpio.py
 Restart=always
 RestartSec=30
 
