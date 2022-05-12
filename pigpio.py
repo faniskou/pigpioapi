@@ -32,12 +32,12 @@ GPIO.add_event_detect(3,GPIO.FALLING,callback=button_callback, bouncetime=200) #
 
 
 @app.route('/<gpionum>/on')
-def turn_led_on():
+def turn_led_on(gpionum):
     GPIO.output(gpionum, GPIO.HIGH)
     return "OK"
 
 @app.route('/<gpionum>/off')
-def turn_led_off():
+def turn_led_off(gpionum):
     GPIO.output(gpionum, GPIO.LOW)
     return "OK"
 
