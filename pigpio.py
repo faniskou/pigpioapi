@@ -24,6 +24,8 @@ def button_callback(channel):
     print("Button was pushed!" + str(channel))
     try:
        requests.get(URL,timeout=0.0000000001)
+    except requests.exceptions.RequestException as e:  print(e)
+   
 
 GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
 
