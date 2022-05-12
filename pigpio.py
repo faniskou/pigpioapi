@@ -19,7 +19,7 @@ GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 GPIO.setup(13, GPIO.OUT) 
 GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 3 to be an input pin and set initial value to be pulled low (off)
-URL = "http://http://192.168.0.100:8091/hitthebell"
+URL = "http://192.168.0.100:8091/hitthebell"
 def button_callback(channel):
     print("Button was pushed!" + str(channel))
     r = requests.get(url = URL)
