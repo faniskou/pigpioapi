@@ -23,6 +23,7 @@ URL = "http://http://192.168.0.100:8091/hitthebell"
 def button_callback(channel):
     print("Button was pushed!" + str(channel))
     r = requests.get(url = URL)
+    data = r.json()
 
 
 GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
