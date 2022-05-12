@@ -27,7 +27,7 @@ def button_callback(channel):
     except requests.exceptions.RequestException as e:  print(e)
    
 
-GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
+GPIO.add_event_detect(3,GPIO.FALLING,callback=button_callback) # Setup event on pin 10 rising edge
 
 
 
