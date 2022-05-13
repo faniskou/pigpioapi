@@ -28,7 +28,7 @@ URL = "http://192.168.0.100:8091/hitthebell"
 def button_callback(channel):
     print("Button was pushed!" + str(channel))
     try:
-       requests.get(URL,timeout=0.0001)
+       requests.get(URL)
     except requests.exceptions.RequestException as e:  print(e)
    
 
