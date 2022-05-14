@@ -30,7 +30,7 @@ def button_callback_bt1():
     except requests.exceptions.RequestException as e:  print(e)
    
 
-button.when_pressed = button_callback_bt1
+bt1.when_pressed = button_callback_bt1
 
 
 @app.route('/sw1/on')
