@@ -23,7 +23,7 @@ bt1 = Button(2)
 
 URL = "http://192.168.0.100:8091/hitthebell"
 
-def button_callback_bt1:
+def button_callback_bt1():
     print("Button was pushed!")
     try:
        requests.get(URL)
