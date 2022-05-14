@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO
+from gpiozero import LED, Button
 import requests
 
 from flask import Flask
@@ -6,44 +6,41 @@ app = Flask(__name__)
 
 # TODO
 
-list_in = [7,11,13,15]
-list_out = [3]
+list_in = [4,17,27,22]
+list_out = [2]
 list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 # add in status 
 # check in is in the list and loop outs 
 #[1,2,3].index(2) # => 1
 #[1,2,3].index(4) # => ValueError
 
+sw1 = LED(4)
+sw2 = LED(17)
+sw2 = LED(27)
+sw2 = LED(22)
 
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-GPIO.setup(7, GPIO.OUT)
-GPIO.setup(11, GPIO.OUT) 
-GPIO.setup(13, GPIO.OUT) 
-GPIO.setup(15, GPIO.OUT) 
+bt1 = Button(2)
 
-
-GPIO.setup(3, GPIO.IN) # Set pin 3 to be an input pin and set initial value to be pulled low (off)
 URL = "http://192.168.0.100:8091/hitthebell"
-def button_callback(channel):
-    print("Button was pushed!" + str(channel))
+
+def button_callback_bt1:
+    print("Button was pushed!")
     try:
        requests.get(URL)
     except requests.exceptions.RequestException as e:  print(e)
    
 
-GPIO.add_event_detect(3,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
+button.when_pressed = button_callback_bt1
 
 
-
-@app.route('/<gpionum>/on')
+@app.route('/sw1/on')
 def turn_led_on(gpionum):
-    GPIO.output(int(gpionum), GPIO.HIGH)
+    sw1.on()
     return "OK"
 
-@app.route('/<gpionum>/off')
+@app.route('/sw1/off')
 def turn_led_off(gpionum):
-    GPIO.output(int(gpionum), GPIO.LOW)
+    sw1.off()
     return "OK"
 
 
