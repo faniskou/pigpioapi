@@ -30,12 +30,12 @@ bt1.when_pressed = button_callback_bt1
 
 
 @app.route('/<gpionum>/on')
-def turn_led_on(gpionum: int):
+def turn_led_on(gpionum):
     list_in[4].on()
     return "OK"
 
 @app.route('/<gpionum>/off')
-def turn_led_off(gpionum: int):
+def turn_led_off(gpionum):
     ist_in[4].off()
     return "OK"
 
