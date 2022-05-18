@@ -14,14 +14,14 @@ list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 #[1,2,3].index(2) # => 1
 #[1,2,3].index(4) # => ValueError
 
-def button_callback_bt1(i =0):
+def button_callback_bt(i =0):
     print("Button was pushed!")
     try:
        requests.get(list_out_http(i))
     except requests.exceptions.RequestException as e:  print(e)
    
 
-list_out[0].when_pressed = button_callbackbt(0)
+list_out[0].when_pressed = button_callback_bt(0)
 
 
 @app.route('/sw1/on')
