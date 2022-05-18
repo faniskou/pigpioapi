@@ -14,10 +14,6 @@ list_out_http =  []
 #[1,2,3].index(2) # => 1
 #[1,2,3].index(4) # => ValueError
 
-sw1 = LED(4)
-sw2 = LED(17)
-sw2 = LED(27)
-sw2 = LED(22)
 
 bt1 = Button(2)
 
