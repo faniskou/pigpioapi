@@ -14,7 +14,7 @@ list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 #[1,2,3].index(2) # => 1
 #[1,2,3].index(4) # => ValueError
 
-def button_callback_bt1(int i):
+def button_callback_bt1(i =0):
     print("Button was pushed!")
     try:
        requests.get(list_out_http(i))
