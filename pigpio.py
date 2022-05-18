@@ -6,41 +6,32 @@ app = Flask(__name__)
 
 # TODO
 
-list_in = [4,17,27,22]
-list_out = [2]
+list_in = [LED(4),LED(17),LED(27),LED(22)]
+list_out = [Button(2)]
 list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 # add in status 
 # check in is in the list and loop outs 
 #[1,2,3].index(2) # => 1
 #[1,2,3].index(4) # => ValueError
 
-sw1 = LED(4)
-sw2 = LED(17)
-sw2 = LED(27)
-sw2 = LED(22)
-
-bt1 = Button(2)
-
-URL = "http://192.168.0.100:8091/hitthebell"
-
-def button_callback_bt1():
+def button_callback_bt1(int i):
     print("Button was pushed!")
     try:
-       requests.get(URL)
+       requests.get(list_out_http(i))
     except requests.exceptions.RequestException as e:  print(e)
    
 
-bt1.when_pressed = button_callback_bt1
+list_out[0].when_pressed = button_callbackbt(0)
 
 
 @app.route('/sw1/on')
-def turn_led_on(gpionum):
-    sw1.on()
+def turn_led_on():
+    list_in[0].on()
     return "OK"
 
 @app.route('/sw1/off')
-def turn_led_off(gpionum):
-    sw1.off()
+def turn_led_off():
+    list_in[0].off()
     return "OK"
 
 
