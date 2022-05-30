@@ -44,5 +44,12 @@ def turn_led_off(gpionum):
     return "OK"
 
 
+@app.route('/ha/sw1')
+def turn_led_off(gpionum):
+    if(sw1().is_lit):
+      return  '{"active": "true"}'
+    return  '{"active": "false"}'
+
+
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=5001)
