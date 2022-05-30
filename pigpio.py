@@ -25,6 +25,8 @@ bt1 = Button(2)
 
 URL = "http://192.168.0.100:8091/hitthebell"
 
+# simple rest call button 
+
 def button_callback_bt1():
     print("Button was pushed!")
     try:
@@ -34,17 +36,7 @@ def button_callback_bt1():
 
 bt1.when_pressed = button_callback_bt1
 
-
-@app.route('/sw1/on')
-def turn_led_on(gpionum):
-    sw1.on()
-    return "OK"
-
-@app.route('/sw1/off')
-def turn_led_off(gpionum):
-    sw1.off()
-    return "OK"
-
+# ha compatible rest led sw
 
 @app.route('/ha/sw1', methods=['GET', 'POST'])
 def haled():
