@@ -18,8 +18,8 @@ list_out_http =  ["http://192.168.0.100:8091/hitthebell"]
 
 sw1 = LED(4)
 sw2 = LED(17)
-sw2 = LED(27)
-sw2 = LED(22)
+sw3 = LED(27)
+sw4 = LED(22)
 
 bt1 = Button(2)
 
