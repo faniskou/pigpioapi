@@ -49,7 +49,7 @@ def haled():
     if request.method == 'GET':
      if(sw1.is_lit):
        return  '{"active": "true"}'
-     if(!sw1.is_lit):
+     else:
        return  '{"active": "false"}'
     if request.method == 'POST':
       content = request.json
