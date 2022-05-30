@@ -2,6 +2,8 @@ from gpiozero import LED, Button
 import requests
 
 from flask import Flask
+from flask import request
+
 app = Flask(__name__)
 
 # TODO
