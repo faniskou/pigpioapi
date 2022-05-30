@@ -45,7 +45,7 @@ def turn_led_off(gpionum):
 
 
 @app.route('/ha/sw1')
-def haled(gpionum):
+def haled():
     if(sw1().is_lit):
       return  '{"active": "true"}'
     return  '{"active": "false"}'
